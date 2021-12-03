@@ -2,27 +2,32 @@
 
 phonebook::phonebook(void)
 {
-    this->contact_nb = 0;
-    this->exit_status = 0;
+    this->_contact_nb = 0;
+    this->_exit_status = 0;
     return ;
 }
 
 void	phonebook::add(void)
 {
-    if (this->contact_nb == 8)
+    if (this->_contact_nb == 8)
     {
 	std::cout << "Your phonebook is full ! You can't add more contacts." << std::endl;
 	return ;
     }
-    this->list[this->contact_nb].init();
-    this->contact_nb++;
+    this->_list[this->_contact_nb].init();
+    this->_contact_nb++;
     return ;
 }
 
 void	phonebook::exit(void)
 {
-    this->exit_status = 1;
+    this->_exit_status = 1;
     return ;
+}
+
+int	phonebook::getexit_status(void)
+{
+    return (this->_exit_status);
 }
 
 static void ft_display(std::string str)
@@ -73,9 +78,9 @@ void	phonebook::search(void)
     std::cout << std::setw(10) << "FIRST NAME" << "|";
     std::cout << std::setw(10) << "LAST NAME" << "|";
     std::cout << std::setw(10) << "NICKNAME" << "|" << std::endl;
-    while (i < this->contact_nb)
+    while (i < this->_contact_nb)
     {
-	tmp = this->list[i];
+	tmp = this->_list[i];
 	std::cout << std::setw(10) << i + 1 << "|";
 	ft_display(tmp.first_name);
 	ft_display(tmp.last_name);
@@ -83,12 +88,7 @@ void	phonebook::search(void)
 	std::cout << std::endl;
 	i++;
     }
-    if (this->contact_nb)
-	ft_choose(this->list);
-    return ;
-}
-
-phonebook::~phonebook(void)
-{
+    if (this->_contact_nb)
+	ft_choose(this->_list);
     return ;
 }

@@ -4,15 +4,15 @@
 class	phonebook
 {
     public:
-	    int	contact_nb;
-	    int	exit_status;
-	    contact list[8];
-
-	    void add(void);
-	    void exit(void);
-	    void search(void);
+	    void    add(void);
+	    void    exit(void);
+	    void    search(void);
+	    int	    getexit_status(void);
 	    phonebook(void);
-	    ~phonebook(void);
+    private:
+	    int	_contact_nb;
+	    int	_exit_status;
+	    contact _list[8];
 };
 
 #endif

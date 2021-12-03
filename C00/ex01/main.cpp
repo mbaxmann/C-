@@ -15,7 +15,7 @@ int main(void)
     phonebook	my_phone;
     std::string	cmd;
 
-    while (!my_phone.exit_status)
+    while (!my_phone.getexit_status())
     {
 	std::cout << "Waiting for your input !: ";
 	std::cin >> cmd;

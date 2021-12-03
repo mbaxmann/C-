@@ -4,7 +4,6 @@
 class	contact
 {
     public:
-	    int	    index;
 	    std::string  first_name;
 	    std::string  last_name;
 	    std::string  nickname;
@@ -12,8 +11,6 @@ class	contact
 	    std::string  darkest_secret;
 
 	    void init(void);
-	    contact(void);
-	    ~contact(void);
 };
 
 #endif
