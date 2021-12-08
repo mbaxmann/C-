@@ -1,4 +1,5 @@
 SRCS	=	main.cpp \
+		Karen.cpp \
 
 OBJS    =       ${SRCS:.cpp=.o}
 
@@ -6,7 +7,7 @@ CC      =       c++
 
 FLAGS   =       -Wall -Wextra -Werror
 
-NAME    =       replace
+NAME    =       Karen
 
 RM      =       rm -rf
 
