@@ -1,0 +1,32 @@
+SRCS	=	main.cpp \
+		convert_str.cpp \
+		isWhat.cpp \
+		display_type.cpp \
+
+OBJS    =       ${SRCS:.cpp=.o}
+
+CC      =       c++
+
+FLAGS   =       -Wall -Wextra -Werror -Wshadow -Wno-shadow
+
+NAME    =       convert
+
+RM      =       rm -rf
+
+all:    ${NAME}
+
+.c.o:
+	${CC} ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+
+${NAME}:        ${OBJS}
+		${CC} -o ${NAME} ${OBJS}
+
+clean:
+	${RM} ${OBJS}
+
+fclean:         clean
+	${RM} ${NAME}
+
+re:	fclean all
+
+.PHONY: all clean fclean re

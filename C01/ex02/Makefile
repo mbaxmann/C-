@@ -2,7 +2,7 @@ SRCS	=	main.cpp \
 
 OBJS    =       ${SRCS:.cpp=.o}
 
-CC      =       c++
+CC      =       clang++
 
 FLAGS   =       -Wall -Wextra -Werror
 

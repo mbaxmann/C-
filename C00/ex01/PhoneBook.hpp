@@ -12,7 +12,7 @@ class	phonebook
     private:
 	    int	_contact_nb;
 	    int	_exit_status;
-	    contact _list[8];
+	    Contact _list[8];
 };
 
 #endif

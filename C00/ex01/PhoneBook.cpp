@@ -41,10 +41,10 @@ static void ft_display(std::string str)
     return ;
 }
 
-static void ft_choose(contact list[8])
+static void ft_choose(Contact list[8])
 {
     std::string	id;
-    contact	current;
+    Contact	current;
     int		valid;
 
     id = "ooo";
@@ -60,18 +60,18 @@ static void ft_choose(contact list[8])
 	    break ;
     }
     current = list[std::stoi(id) - 1];
-    std::cout << "first name: " << current.first_name << std::endl;
-    std::cout << "last name: " << current.last_name << std::endl;
-    std::cout << "nickname: " << current.nickname << std::endl;
-    std::cout << "Phone number: " << current.phone_number << std::endl;
-    std::cout << "Darkest secret: " << current.darkest_secret << std::endl;
+    std::cout << "first name: " << current.getFirstName() << std::endl;
+    std::cout << "last name: " << current.getLastName() << std::endl;
+    std::cout << "nickname: " << current.getNickname() << std::endl;
+    std::cout << "Phone number: " << current.getPhoneNumber() << std::endl;
+    std::cout << "Darkest secret: " << current.getDarkestSecret() << std::endl;
     return ;
 }
 
 void	phonebook::search(void)
 {
     int	    i;
-    contact tmp;
+    Contact tmp;
 
     i = 0;
     std::cout << std::setw(10) << "INDEX" << "|";
@@ -82,9 +82,9 @@ void	phonebook::search(void)
     {
 	tmp = this->_list[i];
 	std::cout << std::setw(10) << i + 1 << "|";
-	ft_display(tmp.first_name);
-	ft_display(tmp.last_name);
-	ft_display(tmp.nickname);
+	ft_display(tmp.getFirstName());
+	ft_display(tmp.getLastName());
+	ft_display(tmp.getNickname());
 	std::cout << std::endl;
 	i++;
     }
