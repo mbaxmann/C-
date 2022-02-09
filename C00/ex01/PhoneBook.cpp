@@ -11,8 +11,9 @@ void	phonebook::add(void)
 {
     if (this->_contact_nb == 8)
     {
-	std::cout << "Your phonebook is full ! You can't add more contacts." << std::endl;
-	return ;
+	this->_contact_nb = 7;
+	for (int i = 0; i < 7; i++)
+	    this->_list[i] = this->_list[i + 1];
     }
     this->_list[this->_contact_nb].init();
     this->_contact_nb++;

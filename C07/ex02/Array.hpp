@@ -33,7 +33,7 @@ class Array
 		delete [] this->_array;
 		this->_length = src._length;
 		this->_array = new T[this->_length];
-		for (int i = 0; i < this->_length; i++)
+		for (int i = 0; i < this->_length; ++i)
 		    this->_array[i] = src._array[i];
 		return (*this);
 	    }

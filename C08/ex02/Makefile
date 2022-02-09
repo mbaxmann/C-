@@ -1,11 +1,10 @@
 SRCS	=	main.cpp \
-		mutantstack.cpp \
 
 OBJS    =       ${SRCS:.cpp=.o}
 
 CC      =       c++
 
-FLAGS   =       -Wall -Wextra -Werror -Wshadow -Wno-shadow
+FLAGS   =       -Wall -Wextra -Werror -std=c++98
 
 NAME    =       MutantStack
 

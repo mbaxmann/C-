@@ -12,8 +12,15 @@ int main()
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
-    //[...]
+    mstack.push(555);
+    mstack.pop();
+    mstack.pop();
+    mstack.push(999);
+    mstack.push(33);
+    mstack.push(1);
     mstack.push(0);
+    std::cout << mstack.top() << std::endl;
+    std::cout << mstack.size() << std::endl;
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
     ++it;

@@ -7,9 +7,9 @@ SRCS	=	main.cpp \
 
 OBJS    =       ${SRCS:.cpp=.o}
 
-CC      =       c++ -g
+CC      =       c++
 
-FLAGS   =       -Wall -Wextra -Werror -Wshadow -Wno-shadow
+FLAGS   =       -Wall -Wextra -Werror -std=c++98
 
 NAME    =       test
 
