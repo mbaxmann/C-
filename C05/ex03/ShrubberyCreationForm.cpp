@@ -32,11 +32,13 @@ std::string ShrubberyCreationForm::getTarget(void) const
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	std::string tmp = this->_target + "_shrubery";
+
     if (this->getIsSigned() == false)
-	throw Form::NotSignedException();
+		throw Form::NotSignedException();
     if (executor.getGrade() > this->getGradeToExecute())
-	throw Form::GradeTooLowException();
-    std::ofstream outfile(this->_target + "_shrubbery");
+		throw Form::GradeTooLowException();
+    std::ofstream outfile(tmp.c_str());
     if (outfile.is_open())
     {    
 	outfile << "             	                                     ." << std::endl;

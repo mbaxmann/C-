@@ -8,7 +8,7 @@ class Form
     public:
 	    Form(std::string name, int gradeToSign, int gradeToExecute);
 	    Form(const Form &src);
-	    ~Form(void);
+	    virtual ~Form(void);
 
 	    Form &operator=(const Form &src);
 	    std::string	getName(void) const;

@@ -33,8 +33,8 @@ class Bureaucrat
 			virtual const char *what(void) const throw();
 	    };
     private:
-	    int _grade;
 	    const std::string _name;
+	    int _grade;
 
 	    Bureaucrat(void);
 };
