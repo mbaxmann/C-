@@ -7,7 +7,9 @@ class Cure : public AMateria
 {
     public:
 	    Cure(void);
+	    Cure(const Cure &cp);
 	    virtual ~Cure(void);
+	    Cure &operator=(const Cure &cp);
 
 	    virtual AMateria *clone(void) const;
 	    virtual void use (ICharacter &target);

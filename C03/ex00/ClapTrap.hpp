@@ -12,7 +12,9 @@ class ClapTrap
 	    void    beRepaired(unsigned int amount);
 
 	    ClapTrap(std::string name);
+	    ClapTrap(const ClapTrap &cp);
 	    ~ClapTrap(void);
+	    ClapTrap &operator=(const ClapTrap &cp);
     private:
 	    std::string _Name;
 	    int		_Hitpoints;

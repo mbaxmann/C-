@@ -18,6 +18,20 @@ FragTrap::FragTrap(void)
     this->_Attack_damage = 30;
 }
 
+FragTrap::FragTrap(const FragTrap &cp)
+{
+	std::cout << "FragTrap copy constructor called." << std::endl;
+	*this = cp;
+}
+
+FragTrap	&FragTrap::operator=(const FragTrap &cp)
+{
+	std::cout << "FragTrap assignation operator called" << std::endl;
+	if (this != & cp)
+		this->_Name = cp._Name;
+	return (*this);
+}
+
 FragTrap::~FragTrap(void)
 {
     std::cout << "FragTrap destructor called." << std::endl;

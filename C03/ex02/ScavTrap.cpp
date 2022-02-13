@@ -18,6 +18,20 @@ ScavTrap::ScavTrap(void)
     this->_Attack_damage = 20;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &cp)
+{
+	std::cout << "ScavTrap copy constructor called." << std::endl;
+	*this = cp;
+}
+
+ScavTrap	&ScavTrap::operator=(const ScavTrap &cp)
+{
+	std::cout << "ScavTrap assignation operator called" << std::endl;
+	if (this != & cp)
+		this->_Name = cp._Name;
+	return (*this);
+}
+
 ScavTrap::~ScavTrap(void)
 {
     std::cout << "ScavTrap destructor called." << std::endl;

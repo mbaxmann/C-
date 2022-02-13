@@ -10,8 +10,10 @@ class FragTrap : public virtual ClapTrap
 	    void    attack(std::string const &target_sc);
 
 	    FragTrap(std::string name);
+	    FragTrap(const FragTrap &cp);
 	    FragTrap(void);
 	    ~FragTrap(void);
+	    FragTrap &operator=(const FragTrap &cp);
     protected:
 	    static const int _Frag_Attack_Damage = 30;
 	    static const int _Frag_Hitpoints = 100;

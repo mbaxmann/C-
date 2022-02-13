@@ -12,8 +12,10 @@ class ClapTrap
 	    void    beRepaired(unsigned int amount);
 
 	    ClapTrap(std::string name);
+	    ClapTrap(const ClapTrap &cp);
 	    ClapTrap(void);
 	    ~ClapTrap(void);
+	    ClapTrap &operator=(const ClapTrap &cp);
     protected:
 	    std::string _Name;
 	    int		_Hitpoints;

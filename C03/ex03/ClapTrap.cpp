@@ -18,6 +18,20 @@ ClapTrap::ClapTrap(void)
     this->_Attack_damage = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cp)
+{
+	std::cout << "ClapTrap copy constructor called." << std::endl;
+	*this = cp;
+}
+
+ClapTrap	&ClapTrap::operator=(const ClapTrap &cp)
+{
+	std::cout << "ClapTrap assignation operator called" << std::endl;
+	if (this != & cp)
+		this->_Name = cp._Name;
+	return (*this);
+}
+
 ClapTrap::~ClapTrap(void)
 {
     std::cout << "ClapTrap destructor called." << std::endl;

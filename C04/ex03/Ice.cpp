@@ -5,6 +5,18 @@ Ice::Ice(void)
     this->_type = "ice";
 }
 
+Ice::Ice(const Ice &cp)
+{
+	*this = cp;
+}
+
+Ice	&Ice::operator=(const Ice &cp)
+{
+	if (this != &cp)
+		*this = cp;
+	return (*this);
+}
+
 Ice::~Ice(void)
 {
 }

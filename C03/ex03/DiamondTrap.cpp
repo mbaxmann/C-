@@ -20,6 +20,23 @@ DiamondTrap::DiamondTrap(void)
     this->_Attack_damage = FragTrap::_Frag_Attack_Damage;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap &cp)
+{
+	std::cout << "DiamondTrap copy constructor called." << std::endl;
+	*this = cp;
+}
+
+DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &cp)
+{
+	std::cout << "DiamondTrap assignation operator called" << std::endl;
+	if (this != & cp)
+	{
+		this->_Name = cp._Name;
+		ClapTrap::_Name = this->_Name + "_clap_name";
+	}
+	return (*this);
+}
+
 DiamondTrap::~DiamondTrap(void)
 {
     std::cout << "DiamondTrap destructor called." << std::endl;
