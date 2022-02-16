@@ -34,17 +34,21 @@ void	Span::addNumber(int number)
 
 unsigned int	Span::shortestSpan(void)
 {
-    std::vector<int>::iterator smallest;
+    std::vector<int>::iterator itr;
     std::vector<int> tmp = this->_vector;
     unsigned int Span;
 
     if (this->_vector.size() < 2)
 	throw exceptionNotEnough();
-    smallest = std::min_element(tmp.begin(), tmp.end());
-    tmp.erase(smallest);
-    smallest = std::min_element(this->_vector.begin(), this->_vector.end());
-    Span = static_cast<unsigned int>
-    (*(std::min_element(tmp.begin(), tmp.end())) - *smallest);
+    std::sort(tmp.begin(), tmp.end());
+    itr = tmp.begin();
+    Span = *(itr + 1) - *itr;
+    while ((itr + 1) != tmp.end())
+    {
+	if ((*(itr + 1) - *itr) < Span)
+	    Span = *(itr + 1) - *itr;
+	++itr;
+    }
     return (Span);
 }
 
