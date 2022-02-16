@@ -1,4 +1,5 @@
 #include "Data.hpp"
+#include <stdint.h>
 
 uintptr_t serialize(Data *ptr)
 {

@@ -3,11 +3,13 @@ SRCS	=	main.cpp \
 		isWhat.cpp \
 		display_type.cpp \
 
+HEADER	=	convert_str.hpp \
+
 OBJS    =       ${SRCS:.cpp=.o}
 
-CC      =       c++
+CXX      =       c++
 
-FLAGS   =       -Wall -Wextra -Werror -std=c++98
+CXXFLAGS   =       -Wall -Wextra -Werror -std=c++98
 
 NAME    =       convert
 
@@ -15,11 +17,11 @@ RM      =       rm -rf
 
 all:    ${NAME}
 
-.c.o:
-	${CC} ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+%.o: %.cpp	${HEADER}
+	${CXX} ${CXXFLAGS} -o $@ -c $<
 
-${NAME}:        ${OBJS}
-		${CC} -o ${NAME} ${OBJS}
+${NAME}:        ${HEADER} ${OBJS}
+		${CXX} ${CXXFLAGS} -o ${NAME} ${OBJS}
 
 clean:
 	${RM} ${OBJS}

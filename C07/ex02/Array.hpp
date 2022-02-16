@@ -33,13 +33,13 @@ class Array
 		delete [] this->_array;
 		this->_length = src._length;
 		this->_array = new T[this->_length];
-		for (int i = 0; i < this->_length; ++i)
+		for (unsigned int i = 0; i < this->_length; ++i)
 		    this->_array[i] = src._array[i];
 		return (*this);
 	    }
 	    T	&operator[](int i)
 	    {
-		if (i < 0 || i >= this->_length)
+		if (i < 0 || static_cast<unsigned int>(i) >= this->_length)
 		    throw(std::out_of_range("Error: Invalid index"));
 		return (this->_array[i]);
 	    }

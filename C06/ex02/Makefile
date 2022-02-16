@@ -1,11 +1,16 @@
 SRCS	=	main.cpp \
 		Base.cpp \
 
+HEADER	=	A.hpp \
+		Base.hpp \
+		B.hpp \
+		C.hpp \
+
 OBJS    =       ${SRCS:.cpp=.o}
 
-CC      =       c++
+CXX      =       c++
 
-FLAGS   =       -Wall -Wextra -Werror -std=c++98
+CXXFLAGS   =       -Wall -Wextra -Werror -std=c++98
 
 NAME    =       base_test
 
@@ -13,11 +18,11 @@ RM      =       rm -rf
 
 all:    ${NAME}
 
-.c.o:
-	${CC} ${FLAGS} -cpp $< -o ${<:.cpp=.o}
+%.o: %.cpp	${HEADER}
+	${CXX} ${CXXFLAGS} -o $@ -c $<
 
-${NAME}:        ${OBJS}
-		${CC} -o ${NAME} ${OBJS}
+${NAME}:        ${HEADER} ${OBJS}
+		${CXX} ${CXXFLAGS} -o ${NAME} ${OBJS}
 
 clean:
 	${RM} ${OBJS}

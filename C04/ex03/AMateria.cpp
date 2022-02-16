@@ -10,6 +10,18 @@ AMateria::AMateria(void)
     this->_type = "No type";
 }
 
+AMateria::AMateria(const AMateria &cp)
+{
+    *this = cp;
+}
+
+AMateria    &AMateria::operator=(const AMateria &cp)
+{
+    if (this != &cp)
+	this->_type = cp._type;
+    return (*this);
+}
+
 AMateria::~AMateria(void)
 {
 }

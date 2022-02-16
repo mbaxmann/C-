@@ -9,8 +9,10 @@ class AMateria
 {
     public:
 	    AMateria(std::string const &type);
+	    AMateria(const AMateria &cp);
 	    AMateria(void);
 	    virtual ~AMateria(void);
+	    AMateria &operator=(const AMateria &cp);
 
 	    std::string const &getType(void) const;
 

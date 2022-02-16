@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "Array.hpp"
 
 #define MAX_VAL 750
@@ -21,11 +22,11 @@ int main(int, char**)
 
     for (int i = 0; i < MAX_VAL; i++)
     {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
+        if (numbers[i] != mirror[i])
+	{
+	    std::cout << "Error: difference!" << std::endl;
+	    return (1);
+	}
     }
     try
     {
